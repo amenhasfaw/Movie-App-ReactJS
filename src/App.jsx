@@ -1,15 +1,32 @@
-import Header from './components/Header'
-import getMovies from './components/utils'
+import { useState } from 'react';
 import Cards from './components/Cards';
 
-const APIURL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
-console.log(getMovies(APIURL))
 function App() {
+
+  const [search,setSearch] = useState('')
+  console.log(search)
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setSearch(e.target.elements.search.value);
+  };
+
   return (
     <>
-      <Header/>
+      <div id="search">
+        <h3>THE MOVIE APP</h3>
+       <form id="form" onSubmit={handleSearch}>
+            <input
+                id="input" 
+                type="text"
+                placeholder="Search"
+                autoComplete="off"
+                name='search'
+            />
+        </form>
+      </div>
       <div id="movies">
-        <Cards/>
+        <Cards search={search}/>
       </div>
     </>
   )
