@@ -11,10 +11,14 @@ function App() {
     setSearch(e.target.elements.search.value);
   };
 
+  const reload = () => {
+    location.reload()
+  }
+
   return (
     <>
       <div id="search">
-        <h3>THE MOVIE APP</h3>
+        <h3 onClick={reload}>THE MOVIE APP</h3>
        <form id="form" onSubmit={handleSearch}>
             <input
                 id="input" 
