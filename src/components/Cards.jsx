@@ -20,6 +20,8 @@ export default function Cards({search}) {
         fetchMovies(APIURL);
       }, []);
 
+      
+
     let searchTerm = ''
     if(search !== '' && searchTerm !== search){
         const link = SEARCHAPI + search
