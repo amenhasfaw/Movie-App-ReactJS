@@ -9,7 +9,7 @@ export default function Header() {
                 id="input" 
                 type="text"
                 placeholder="Search"
-                autocomplete="off"
+                autoComplete="off"
             />
         </form>
     </div>
